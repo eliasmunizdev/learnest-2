@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+
+        <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/normalize.min.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/font-awesome.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/carousel.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/style.css' %}"> 
+<link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'core/owlcarousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'core/owlcarousel/owl.theme.default.min.css' %}">
+
+
+    </head>
+
+    <body>
+      <nav class="navbar navbar-default heavy" id="sticky_side_nav">
+    <div class="sticky_side_inner">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <label id="mobile_menu_toggle" class="navbar-toggle btn btn-default" for="mobile_menu_checkbox"><span
+                    class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></label>
+
+            <div class="contact mobile hidden-lg hidden-md hidden-sm">
+
+                <div class="pull-left" style="width:40%">
+                    <a href="index.php">
+                        <img src="{% static 'core/img/logo_final.png' %}" alt="" style="width: 100%;padding: 10px;">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <input type="checkbox" id="mobile_menu_checkbox" class="hidden" name="mobile_menu_checkbox">
+        <div id="sticky_side_nav_inner">
+            <label class="mobile_menu_overlay" for="mobile_menu_checkbox"></label>
+            <ul class="nav navbar-nav hidden-xs">
+
+                <li class="close visible-xs"><label for="mobile_menu_checkbox" style="font-size: 24px !important;"><span
+                            class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></li>
+                <li class="ml-5">
+                    <a href="index.php">
+                        <span class="hidden-xs " aria-hidden="true">
+                            <img src="{% static 'core/img/logo_final.png' %}" alt="" style="height: 7vh">
+                        </span>
+                        <span class="home visible-xs">Home</span>
+                    </a>
+                </li>
+                <!--
+                <li class="dropdown fl-right mr-5" style="margin-top: 1%">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+                        style="    padding-right: 0;">
+                        <img src="img/formas/facebook.png" alt="" style="width:32px">
+                    </a>
+
+                </li>
+   -->
+                <li class="dropdown fl-right mt-1-5">
+                    <a href="{% url 'logout' %}" class="dropdown-toggle" role="button" aria-expanded="false">
+                        Cerrar Sesión
+                    </a>
+                </li>
+                <!--
+                <li class="dropdown fl-right mt-1-5">
+                    <a href="#nosotros" class="dropdown-toggle" role="button" aria-expanded="false">
+                        Nosotros</a>
+                </li>
+                <li class="dropdown fl-right mt-1-5">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                        aria-expanded="false">Servicios</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="corblock.php">Corblock</a></li>
+                        <li><a href="simple.php">Simple</a></li>
+                    </ul>
+                </li>
+             -->
+            </ul>
+
+            <!-- MOBILE
+            <ul class="nav navbar-nav visible-xs">
+                <li class="close visible-xs"><label for="mobile_menu_checkbox" style="font-size: 24px !important;"><span
+                            class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></li>
+                <li>
+                    <a href="index.php">
+                        <span class="hidden-xs " aria-hidden="true">
+                            <img src="img/logo_final.png" alt="" style="height: 7vh">
+                        </span>
+                        <span class="home visible-xs">Home</span>
+                    </a>
+                </li>
+                <li class="hidden-xs">
+                    <a href=" #" class="dropdown-toggle" role="button" aria-expanded="false">
+                        <img src="img/formas/facebook.png" alt="" style="width:32px">
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#formulario" class="dropdown-toggle" role="button" aria-expanded="false">
+                        Formulario</a>
+
+                </li>
+                <li>
+                    <a href="#nosotros" class="dropdown-toggle" role="button" aria-expanded="false">
+                        Nosotros</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                        aria-expanded="false">Servicios</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="corblock.php">Corblock</a></li>
+                        <li><a href="simple.php">Simple</a></li>
+                    </ul>
+                </li>
+                <li class="visible-xs">
+                    <a href=" #" class="dropdown-toggle" data-toggle="" role="button" aria-expanded="false">
+                        <img src="img/formas/facebook.png" alt="" style="width:32px">
+                    </a>
+
+                </li>
+            </ul>
+        </div>/.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+  {% block content %}{% endblock %}
+
+
+        <script src="{% static 'core/js/jquery.min.js' %}"></script>
+<script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'core/js/index.js' %}"></script>        <!--OWL-->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+        <script type="text/javascript">
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            loop: true,
+            nav: true,
+            items: 2,
+            navText: [
+                "<img src='img/formas/felcha-hor.png' style='filter: invert(1); transform: rotate(180deg)'>",
+                "<img src='img/formas/felcha-hor.png' style='filter: invert(1);'>"
+            ],
+            responsive: {
+                0: {
+                    items: 1.4,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: false
+                }
+            }
+        });
+     
+        /*ITEM ACTIVO NAV*/
+
+        function verifica(ident) {
+
+            switch (ident) {
+                case 1: {
+                    $("#elearning-ac").css({
+                        background: "#EDF0F9"
+                    });
+                    $("#reforzamiento-ac").css({
+                        background: "#fff"
+                    });
+                    $("#aumentada-ac").css({
+                        background: "#fff"
+                    });
+                    $("#virtual-ac").css({
+                        background: "#fff"
+                    });
+                    $("#chatbot-ac").css({
+                        background: "#fff"
+                    });
+                    break;
+                }
+                case 2: {
+                    $("#elearning-ac").css({
+                        background: "#fff"
+                    });
+                    $("#reforzamiento-ac").css({
+                        background: "#EDF0F9"
+                    });
+                    $("#aumentada-ac").css({
+                        background: "#fff"
+                    });
+                    $("#virtual-ac").css({
+                        background: "#fff"
+                    });
+                    $("#chatbot-ac").css({
+                        background: "#fff"
+                    });
+                    break;
+                }
+                case 3: {
+                    $("#elearning-ac").css({
+                        background: "#fff"
+                    });
+                    $("#reforzamiento-ac").css({
+                        background: "#fff"
+                    });
+                    $("#aumentada-ac").css({
+                        background: "#EDF0F9"
+                    });
+                    $("#virtual-ac").css({
+                        background: "#fff"
+                    });
+                    $("#chatbot-ac").css({
+                        background: "#fff"
+                    });
+                    break;
+                }
+                case 4: {
+                    $("#elearning-ac").css({
+                        background: "#fff"
+                    });
+                    $("#reforzamiento-ac").css({
+                        background: "#fff"
+                    });
+                    $("#aumentada-ac").css({
+                        background: "#fff"
+                    });
+                    $("#virtual-ac").css({
+                        background: "#EDF0F9"
+                    });
+                    $("#chatbot-ac").css({
+                        background: "#fff"
+                    });
+                    break;
+                }
+                case 5: {
+                    $("#elearning-ac").css({
+                        background: "#fff"
+                    });
+                    $("#reforzamiento-ac").css({
+                        background: "#fff"
+                    });
+                    $("#aumentada-ac").css({
+                        background: "#fff"
+                    });
+                    $("#virtual-ac").css({
+                        background: "#fff"
+                    });
+                    $("#chatbot-ac").css({
+                        background: "#EDF0F9"
+                    });
+                    break;
+                }
+            }
+
+        }
+        </script>
+
+        
+    </body>
+
+</html>

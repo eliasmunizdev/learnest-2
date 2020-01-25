@@ -1,0 +1,81 @@
+{% extends 'core/base_2.html' %}
+{% load static %}
+{% block title %}Páginas{% endblock %}
+{% block content %}
+{% include 'pages/includes/panel_menu.html'%}
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row">
+   
+      {% for page in page_list|dictsort:"id" reversed %}
+       {% if page.get_client_display  == request.user.username %}
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane active " id="elearning" role="tabpanel" aria-labelledby=elearning>
+                <div class="col-12 servicio " style=" ">
+                    <div class="container-fluid">
+                        <div class="row equal">
+                            <div class="col-md-3 height-mob"
+                                style=" background: url({% static 'core/img/servicios/servicio.png' %})">
+                            </div>
+                            <div class="col-md-5" style="padding:0 3%">
+                                <h4 class="Gilroy-Bold">{{page.title}}</h4>
+                                <p class="light mt-5">
+                                {{page.content|striptags|safe|truncatechars:"200"}}</p>
+
+                                <div class="container-fluid " style="padding: 0">
+                                    <div class="">
+                                        <div class="col-md-6" style="padding:0">
+                                            <p class="light left celeste">
+                                               15 clases divertidas
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6" style="padding:0">
+                                            <p class="light left celeste">
+                                                Duración: 10hs
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                            
+                                <h4 class="Gilroy-Bold right">{{page.price}}</h4>
+                                
+                               <!-- <h4 class="Gilroy-Bold right">Consulte</h4>-->
+
+
+                                <p class="descr light celeste right mt-5" style="margin-left:50%">
+                                    Si eres asociado comercial accede a la plataforma de pago haciendo click en
+                                    comprar
+                                </p>
+
+                                <div class="caja-btn">
+                                    <button class="btn-1 Gilroy-Bold gris">
+                                        Ver Detalles
+                                    </button>
+                                    <a href="{{page.link}}">
+                                    <input class="btn-2 Gilroy-Bold blanco" type="submit" name="submit"
+                                            value="Pagar" />
+                                            </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    </div>
+</div>
+{% else %}
+<script> 
+    var url= "http://127.0.0.1:8000/admin/"; 
+    window.location = url; 
+</script> 
+        {% endif %}
+
+{% endblock %}
